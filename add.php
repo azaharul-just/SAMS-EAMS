@@ -1,8 +1,20 @@
 <?php
  include('inc/header.php');
+ include('lib/Student.php');
+?>
+<?php
+	$stu = new Student;
+
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		$name = $_POST['name'];
+		$roll = $_POST['roll'];
+
+		$insertData = $stu->insertData($name,$roll);
+
+	}
+
 
 ?>
-
 
 			<div class="card"  style="min-height: 500px">
 
@@ -12,7 +24,12 @@
 				</div>
 				<div class="card-body">
 
+				<?php
+					if (isset($insertData)) {
+						echo $insertData;
+					}
 
+				?>
 
 					<form action="" method="post">
  						<div class="form-group">
