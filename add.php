@@ -1,8 +1,13 @@
+<!-- Header file and Student class added -->
 <?php
- include('inc/header.php');
+ include('inc/header.php'); 
  include('lib/Student.php');
 ?>
-<?php
+
+
+<!-- Object create of Student class and insert info -->
+
+<?php 
 	$stu = new Student;
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -24,16 +29,18 @@
 				</div>
 				<div class="card-body">
 
-				<?php
+	<!-- Message show student info insert or failed -->
+				<?php 
 					if (isset($insertData)) {
 						echo $insertData;
 					}
 
 				?>
 
+	<!-- Student info insert form -->
 					<form action="" method="post">
  						<div class="form-group">
- 							<label for="name"><b>Student Name</b></label>
+ 							<label for="name"><b>Student Name</b></label> 
  							<input type="text" name="name" id="name" class="form-control" placeholder="Enter student name" >
  						</div>
 
@@ -41,15 +48,16 @@
  							<label for="roll"><b>Student Roll</b></label>
  							<input type="text" name="roll" id="roll" class="form-control" placeholder="Enter student roll" >
  						</div>
-
+						
 						<div class="form-group">
  							<input type="submit" name="submit" class="btn btn-primary" value="Add Student">
  						</div>
 
 					</form>
-
+					
 				</div>
-
+				 
 			</div>
 
+<!-- Footer file added -->
 <?php include('inc/footer.php'); ?>
